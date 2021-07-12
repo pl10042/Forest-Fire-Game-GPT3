@@ -72,7 +72,7 @@ class FireHose:
                         print("Would you like to update the Water Capacity?(y or n)")
                         userResponse = str(input())
 
-                        if userResponse == 'y'.upper():
+                        if userResponse == 'y':
                             print("\nPlease add more water by updating the water capacity: ")
                             powerUpdate = int(input())
                             self.power = powerUpdate
@@ -117,7 +117,7 @@ class FireHose:
                                             exit()
                                             break
 
-                        if userResponse == 'n'.upper():
+                        if userResponse == 'n':
                             print()
                             while firePotency <= 100:
                                 print("\r", "Fire potency:", firePotency, "%", "   ", "Water Capacity:", self.power,
@@ -132,7 +132,7 @@ class FireHose:
                                     break
             if firePotency < 1:
                 print()
-                print("The fire has been extinguished!")
+                print("\nThe fire has been extinguished!")
                 exit()
 
         if self.power < 50 and fireCheck:
