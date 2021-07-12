@@ -12,6 +12,10 @@ below 10 percent of the fire potency, the user loses. The goal is to continuousl
 completely put out. 
 """
 
+qaDict = {
+
+    "questionOne": "How many apples are in the tree if there were originally 10, and 5 are on the ground?"
+}
 
 # Firehose object that uses check statements to put out the fire
 class FireHose:
@@ -168,10 +172,16 @@ else:
 if (dryness <= 20) and windSpeed >= 10 and numberOfTrees > 1000:
     # print("Do you wish to start a bonfire? (y or n)")
     # answer = str(input(""))
-    randNumb = random.randint(1, 10)
-    print("Please pick a number between 1 and 10: ")
+    # randNumb = random.randint(1, 10)
+    """
+    Now testing question/answering implementation.
+    """
+    print("Providing first question...")
+    print()
+    print(qaDict["questionOne"])
+    qaDict["questionOne"] = 5
     answer = int(input())
-    if answer != randNumb:
+    if answer != 5:
         print("\nA fire has started! Use the hose to put it out!")
         fireStarted = True
         if fireStarted:
@@ -181,6 +191,6 @@ if (dryness <= 20) and windSpeed >= 10 and numberOfTrees > 1000:
             hose = FireHose(hosePower)
             hose.putOut(fireStarted)
 
-    elif answer == randNumb:
-        print("Congratulations! The fire was successfully prevented...")
+    elif answer == 5:
+        print("\nCongratulations! The fire was successfully prevented...")
         exit()
