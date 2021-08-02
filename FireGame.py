@@ -50,6 +50,8 @@ query6 = "Return a random number that is greater than 51 and less than 500. Do n
 
 response1 = str(gpt3(query))
 response = ''.join(i for i in response1 if i.isdigit())
+if response == '55':
+    response.replace('55', '5')
 answerDict["aiAnswer"].append(response)
 response21 = (gpt3(query2))
 response2 = ''.join(i for i in response21 if i.isdigit())
